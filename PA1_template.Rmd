@@ -41,6 +41,7 @@ Using tapply to caculate total steps taken per day.
 ```{r}
 dailysteps <- tapply(activity$steps, activity$date, sum, na.rm=T)
 hist(dailysteps, main="Total number of steps taken per day", xlab="Total steps taken per day", col="red", breaks=15)
+![alt tag](https://raw.githubusercontent.com/tshijing/RepData_PeerAssessment1/master/figuers/plot1.png)
 ```
 
 Calulate the mean and median of the toal number of steps taken per day
@@ -55,6 +56,7 @@ Using tapply to caculate average steps taken per interval.
 ```{r}
 avesteps <- tapply(activity$steps, activity$interval, mean, na.rm=T)
 plot(names(avesteps), avesteps, main="Average daily activity pattern", xlab="Interval", ylab="Average Steps", type="l")
+![alt tag](https://raw.githubusercontent.com/tshijing/RepData_PeerAssessment1/master/figuers/plot2.png)
 ```
 
 Using which.max to look for the interval contains the maximum number of steps
@@ -105,6 +107,7 @@ Make a histogram of the total number of steps taken each day
 ```{r}
 newdailysteps <- tapply(newactivity$steps, newactivity$date, sum)
 hist(newdailysteps, main="Total number of steps taken per day (adjusted)", xlab="Total steps taken per day (adjusted)", col="red", breaks=15)
+![alt tag](https://raw.githubusercontent.com/tshijing/RepData_PeerAssessment1/master/figuers/plot3.png)
 ```
 
 Caculate the mean and median 
@@ -128,5 +131,5 @@ wddayavesteps <- tapply(weekendactivity$steps, weekendactivity$interval, mean, n
 par(mfrow=c(2,1))
 plot(names(wkdayavesteps), wkdayavesteps, main="Average daily activity pattern in weekdays", xlab="Interval", ylab="Average Steps", type="l")
 plot(names(wddayavesteps), wddayavesteps, main="Average daily activity pattern in weekend", xlab="Interval", ylab="Average Steps", type="l")
-
+![alt tag](https://raw.githubusercontent.com/tshijing/RepData_PeerAssessment1/master/figuers/plot4.png)
 ```
